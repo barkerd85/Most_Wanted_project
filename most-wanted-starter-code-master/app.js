@@ -15,7 +15,7 @@ function app(people){
       searchResults = searchByName(people);
       break;
     case 'no':
-      // TODO: search by traits
+  // TODO: search by traits
       break;
       default:
     app(people); // restart app
@@ -84,10 +84,50 @@ function searchByName(people){
 
 //unfinished function to search through an array of people to find matching eye colors. Use searchByName as reference.
 function searchByEyeColor(people){
+  let eyeColor = promptFor("What is the person's eye color?", autoValid);
+  let foundPerson = people.filter(function(potentialMatch){
+    if(potentialMatch.eyeColor === eyeColor){
+      return true;
+    }
+    else{
+      return false;
+    }
 
+  })
+  return foundPerson;
 }
 
-//TODO: add other trait filter functions here.
+function searchByGender(people){
+  let gender = promptFor("What is the person's gender?", autoValid);
+  let foundPerson = people.filter(function(potentialMatch){
+    if(potentialMatch.gender === gender){
+      return true;
+  }
+    else{
+      return false;
+  }
+
+})
+return foundPerson;
+  
+}
+
+function searchByOccupation(people){
+  let occupation = promptFor("What is the person's occupation", autoValid);
+  let foundPerson = people.filter(function(potentialMatch){
+    if(potentialMatch.occupation === occupation){
+      return true;
+    }
+    else{
+      return false;
+    }
+
+  })
+  return foundPerson;
+  
+}
+
+
 
 
 
@@ -109,9 +149,19 @@ function displayPerson(person){
   // print all of the information about a person:
   // height, weight, age, name, occupation, eye color.
   let personInfo = "First Name: " + person.firstName + "\n";
-  personInfo += "Last Name: " + person.lastName + "\n";
+    personInfo += "Last Name: " + person.lastName + "\n";
+    personInfo += "Gender: " + person.gender + "\n";
+    personInfo += "DOB: " + person.dob + "\n";
+    personInfo += "Height: " + person.height+ "\n";
+    personInfo += "Weight: " + person.weight + "\n";
+    personInfo += "Eye Color: " + person.eyeColor + "\n";
+    personInfo += "Occupation: " + person.occupation+ "\n";
+    personInfo += "Parents: " + person.parents+ "\n";
+    personInfo += "Current Spouse: " + person.currentSpouse + "\n";
+
   // TODO: finish getting the rest of the information to display.
   alert(personInfo);
+  return personInfo;
 }
 
 //#endregion
@@ -159,3 +209,5 @@ function customValidation(input){
 }
 
 //#endregion
+
+
