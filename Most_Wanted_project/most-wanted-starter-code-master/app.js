@@ -14,7 +14,7 @@ function app(people){
       searchResults = searchByName(people);
       break;
     case 'no':
-      searchResults = searchByTrait(people);
+      searchResults = searchByTraits(people);
       break;
       default:
     app(people); // restart app
@@ -94,16 +94,15 @@ function searchByTraits(people){
       console.log(filteredTraits)
     }
   
-  searchType = promptFor("Do you know the peron's occupation? Please enter 'yes' or 'no'", yesNo).toLowerCase();
+  searchType = promptFor("Do you know the person's occupation? Please enter 'yes' or 'no'", yesNo).toLowerCase();
     if(searchType.toLowerCase() === 'yes'){
     filteredTraits = searchByOccupation(filteredTraits);
     console.log(filteredTraits)
     }  
 
-displayPeople(filteredTraits);
-return filteredTraits;
+    displayPeople(filteredTraits);
+    return filteredTraits;
 }
-
 
 
 function searchByName(people){
@@ -155,7 +154,7 @@ function searchByGender(people){
 }
 
 function searchByOccupation(people){
-  let occupation = promptFor("What is the person's occupation", autoValid);
+  let occupation = promptFor("What is the person's occupation?", autoValid);
   let foundPeople = people.filter(function(potentialMatch){
     if(potentialMatch.occupation === occupation){
       return true;
