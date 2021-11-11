@@ -64,7 +64,6 @@ function searchByTrait(people){
       resultTrait = searchByEyeColor(people);
       displayPeople(foundPeople);
       break;
-      
       case "gender":
       resultTrait = searchByGender(people)
       onePerson(resultTrait, people)
@@ -77,6 +76,7 @@ function searchByTrait(people){
       searchByTrait(people);
   }
 }
+      
 
 function searchByTraits(people){
   let filteredTraits = people;
@@ -187,14 +187,14 @@ function displayPeople(people){
 function displayPerson(person){
   // print all of the information about a person:
   // height, weight, age, name, occupation, eye color.
-  let firstName = "First Name:" + person[0].firstName;
-  let lastName = "Last Name:" + person[0].lastName;
-  let gender = "Gender:" + person[0].gender;
-  let dob = "Date of Birth:" + person[0].dob;
-  let height = "Height:" + person[0].height;
-  let weight = "Weight:" + person[0].weight;
-  let eyeColor = "Eye Color:" + person[0].eyeColor;
-  let occupation = "Occupation:" + person[0].occupation;
+  let firstName = "First Name: " + person[0].firstName;
+  let lastName = "Last Name: " + person[0].lastName;
+  let gender = "Gender: " + person[0].gender;
+  let dob = "Date of Birth: " + person[0].dob;
+  let height = "Height: " + person[0].height;
+  let weight = "Weight: " + person[0].weight;
+  let eyeColor = "Eye Color: " + person[0].eyeColor;
+  let occupation = "Occupation: " + person[0].occupation;
 
   
   alert(firstName+'\n'+lastName+'\n'+gender+'\n'+dob+'\n'+height+'\n'+weight+'\n'+eyeColor+'\n'+occupation+'\n');
