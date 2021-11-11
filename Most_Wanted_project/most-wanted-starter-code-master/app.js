@@ -1,6 +1,5 @@
 "use strict"
 
-
 //Menu functions.
 //Used for the overall flow of the application.
 /////////////////////////////////////////////////////////////////
@@ -22,7 +21,6 @@ function app(people){
     app(people); // restart app
       break;
   }
-  
   // Call the mainMenu function ONLY after you find the SINGLE person you are looking for
   mainMenu(searchResults, people);
 }
@@ -107,7 +105,7 @@ function searchByName(people){
   return foundPerson;
 }
 
-//unfinished function to search through an array of people to find matching eye colors. Use searchByName as reference.
+// unfinished function to search through an array of people to find matching eye colors. Use searchByName as reference.
 function searchByEyeColor(people){
   let eyeColor = promptFor("What is the person's eye color?", autoValid);
   let foundPeople = people.filter(function(potentialMatch){
@@ -117,12 +115,12 @@ function searchByEyeColor(people){
     else{
       return false;
     }
-
   })
   displayPeople(foundPeople);
   return foundPeople;
 }
 
+// //TODO: add other trait filter functions here.
 function searchByGender(people){
   let gender = promptFor("What is the person's gender?", autoValid).toLowerCase();
   let foundPeople = people.filter(function(potentialMatch){
@@ -148,15 +146,11 @@ function searchByOccupation(people){
     else{
       return false;
     }
-
   })
   displayPeople(foundPeople);
   return foundPeople;
   
 }
-
-
-
 
 
 //#endregion
@@ -189,6 +183,16 @@ function displayPerson(person){
   alert(firstName+'/n'+lastName+'/n'+gender+'/n'+dob+'/n'+height+'/n'+weight+'/n'+eyeColor+'/n'+occupation+'/n');
     
 }
+
+
+// function displayFamily(family){
+//   let familyInfo = "Parents: " + person.parents + "\n";
+//     familyInfo += 
+
+//   alert(personInfo);
+//     return personInfo
+// }
+
 
 //#endregion
 
