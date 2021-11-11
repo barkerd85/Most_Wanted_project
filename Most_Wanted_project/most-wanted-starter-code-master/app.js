@@ -14,7 +14,7 @@ function app(people){
       searchResults = searchByName(people);
       break;
     case 'no':
-      searchResults = searchByEyeColor(people);
+      searchResults = searchByTrait(people);
       break;
       default:
     app(people); // restart app
@@ -145,11 +145,10 @@ function displayPerson(person){
 
 // function displayFamily(family){
 //   let familyInfo = "Parents: " + person.parents + "\n";
-//     familyInfo += 
 
 //   alert(personInfo);
 //     return personInfo
-// }
+}
 
 
 //#endregion
