@@ -78,14 +78,33 @@ function searchByTrait(people){
   }
 }
 
-// function onePerson(searchResults, people){
-//   if (searchResults.length == 1){
-//     mainMenu(searchResults, people)
-//   } else{
-//       alert("Your search includes more than one person, redirect to filter by traits");
-//       searchByTrait(searchResults)
-//   }
-// }
+function searchByTraits(people){
+  let filteredTraits = people;
+
+  let searchType = promptFor("Do you know the person's eye color? Please enter 'yes' or 'no'", yesNo).toLowerCase();
+
+    if(searchType.toLowerCase() === 'yes'){
+      filteredTraits = searchByEyeColor(filteredTraits);
+      console.log(filteredTraits)
+    }
+
+  searchType = promptFor("Do you know the peron's gender? Please enter 'yes' or 'no'",  yesNo).toLowerCase();
+    if(searchType.toLowerCase() === 'yes'){
+      filteredTraits = searchByGender(filteredTraits);
+      console.log(filteredTraits)
+    }
+  
+  searchType = promptFor("Do you know the peron's occupation? Please enter 'yes' or 'no'", yesNo).toLowerCase();
+    if(searchType.toLowerCase() === 'yes'){
+    filteredTraits = searchByOccupation(filteredTraits);
+    console.log(filteredTraits)
+    }  
+
+displayPeople(filteredTraits);
+return filteredTraits;
+}
+
+
 
 function searchByName(people){
   let firstName = promptFor("What is the person's first name?", autoValid);
@@ -129,8 +148,8 @@ function searchByGender(people){
       return false;
   }
 
-})
-displayPeople(foundPeople);
+  })
+  displayPeople(foundPeople);
   return foundPeople;
   
 }
